@@ -11,7 +11,7 @@ import java.io.IOException;
  *
  * @author ${AUTHOR}
  */
-public class FlowBeanWritable implements Writable {
+public class FlowBeanWritable implements Writable, Comparable<FlowBeanWritable> {
 
     /**
      * 上行速率
@@ -85,5 +85,10 @@ public class FlowBeanWritable implements Writable {
 
     public void setSumFlow(Long sumFlow) {
         this.sumFlow = sumFlow;
+    }
+
+    @Override
+    public int compareTo(FlowBeanWritable o) {
+        return this.downFlow.compareTo(o.downFlow);
     }
 }
