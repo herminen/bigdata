@@ -25,7 +25,7 @@ public class SequenceFileTask {
         Configuration conf = new Configuration();
         //跨平台执行，windows
         conf.set("mapreduce.app-submission.cross-platform","true");
-        Job job = Job.getInstance(conf, "seqence_file_combiner");
+        Job job = Job.getInstance(conf, "sequence_file_combiner");
         job.setInputFormatClass(WholeFileInputFormat.class);
         job.setOutputFormatClass(SequenceFileOutputFormat.class);
         job.setJarByClass(SequenceFileTask.class);
