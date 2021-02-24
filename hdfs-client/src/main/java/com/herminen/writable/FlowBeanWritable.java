@@ -16,15 +16,15 @@ public class FlowBeanWritable implements Writable, Comparable<FlowBeanWritable> 
     /**
      * 上行速率
      */
-    private Long upFlow;
+    private Long upFlow = 0L;
     /**
      * 下行速率
      */
-    private Long downFlow;
+    private Long downFlow = 0L;
     /**
      * 总速率
      */
-    private Long sumFlow;
+    private Long sumFlow = 0L;
 
     public FlowBeanWritable() {
     }
