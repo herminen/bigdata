@@ -23,14 +23,14 @@ public class FlowDataMapper extends Mapper<LongWritable, Text, Text, FlowBeanWri
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String content = value.toString();
-        Iterable<String> split = Splitter.on(" ").split(content);
+        Iterable<String> split = Splitter.on("\t").split(content);
         ArrayList<String> record = Lists.newArrayList(split);
         if(record.size()  < 6){
             return;
         }
         phone.set(record.get(1));
-        Long upFlow = NumberUtils.toLong(record.get(3));
-        Long downFlow = NumberUtils.toLong(record.get(4));
+        Long upFlow = NumberUtils.toLong(record.get(4));
+        Long downFlow = NumberUtils.toLong(record.get(5));
         context.write(phone, new FlowBeanWritable(upFlow, downFlow));
     }
 }
