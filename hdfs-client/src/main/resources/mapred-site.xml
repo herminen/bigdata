@@ -45,5 +45,9 @@
 	<property>
 	    <name>mapred.child.env</name>
 	    <value>LD_LIBRARY_PATH=/usr/local/lzo-2.10/lib</value>
-	</property> 
+	</property>
+	<property>
+		<name>mapred.remote.os</name>
+		<value>Linux</value>
+	</property>
 </configuration>
